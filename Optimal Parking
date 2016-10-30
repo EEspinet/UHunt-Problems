@@ -1,0 +1,57 @@
+//Enrique Espinet
+//Uva Hunt
+//Parking 11364
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+//The logic behind this problem is that no matter where you park, the total distance you walk is ((max - min) *2)
+//The problem is a very brute program which calculates the max distance, the min distance, and then multiplies it by 2
+
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner in = new Scanner(System.in);
+		int cases = in.nextInt();
+		for(int a = 0; a < cases; a++)
+		{
+			int numStore = in.nextInt();
+			
+			int[] array = new int[numStore];
+			for(int b = 0; b < numStore; b++)
+			{
+				array[b] = in.nextInt();
+			}
+			int max = 0;
+			for(int c = 0; c < numStore; c++)
+			{
+				if(array[c] > max)
+				{
+					max = array[c];
+				}
+			}
+			
+			int min = 0;
+			
+			for(int d = 0; d < numStore; d++)
+			{
+				if(d == 0)
+				{
+					min = array[d];
+				}
+			}
+			for(int e = 0; e < numStore; e++)
+			{
+				if(array[e] < min)
+				{
+					min = array[e];
+				}
+			}
+			int total = (max - min) * 2;
+			System.out.println(total);
+		}
+	}
+}
