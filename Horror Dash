@@ -1,0 +1,35 @@
+//Enrique Espinet
+//Uva Hunt 11799
+//Horror Dash
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int cases;
+	cin>>cases;
+	//Gather the number of cases
+	for(int a = 1; a <= cases; a++)
+	{
+		int totalStudents;
+		cin>>totalStudents;
+		//gather number of students
+		int max = 0;
+		for(int b = 0; b < totalStudents; b++)
+		{//loop through the students to find the max speed, then save it under int "max"
+			int temp = 0;
+			cin>>temp;
+			if(temp> max)
+			{
+				max = temp;
+			}
+			else
+			{
+				
+			}
+		}
+    //once obtained max speed, print it out as the clown speed
+		cout<<"Case "<<a<<": "<<max<<endl;
+	}
+	return 0;
+}
