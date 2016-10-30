@@ -1,0 +1,33 @@
+//Enrique Espinet
+//Odd Sum
+//UVA Hunt 10783
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int cases;
+	cin>>cases;
+	for(int y = 1; y <= cases; y++)
+	{
+		int a,b;
+		cin>>a>>b;
+		int total = 0;
+		if(a%2 == 0)
+		{
+			for(int x = a + 1; x <= b; x = x + 2)
+			{
+				total = total + x;
+			}
+		}
+		else
+		{
+			for(int x = a; x <= b; x = x + 2)
+			{
+				total = total + x;
+			}
+		}
+		
+		cout<<"Case "<<y<<": "<<total<<endl;
+	}
+	return 0;
