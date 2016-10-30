@@ -1,0 +1,64 @@
+//Enrique Espinet
+//HardWood Species
+//10226
+//Created in Java in Netbeans IDE
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.DecimalFormat;
+import java.util.TreeMap;
+
+/**
+ * @author Enrique
+ */
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException {
+       
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        
+        String testCases = in.readLine();
+        int cases = Integer.parseInt(testCases);
+        String blankSpace = in.readLine(); //scans the empty line and skips it
+        while(cases > 0)
+        {
+            TreeMap<String, Integer> hmap = new TreeMap<String, Integer>();
+            int counter = 0; //counter for how many trees are tested
+            String temp = in.readLine(); //scans each tree
+            while(temp!=null && !(temp.equals("")))
+            {
+                counter+=1; //keeps count of how many trees are tested
+                
+                if(hmap.containsKey(temp))
+                {
+                    int temp2 = hmap.get(temp);
+                    hmap.put(temp, temp2 + 1);
+                }
+                else
+                {
+                    hmap.put(temp, 1);
+                }
+                temp = in.readLine();
+            }
+            double temp4 = 0;
+            int temp3; //variable for the percentage of each tree
+            DecimalFormat formatter = new DecimalFormat("#0.0000");
+            for(String s : hmap.keySet()){
+                int a = hmap.get(s);
+                temp4 = (a/(double)counter) * 100;
+                System.out.println(s + " " + formatter.format(temp4));
+            }
+            
+            temp3 =0;
+            cases = cases - 1;
+            if(cases>0)System.out.println("");
+            
+        }
+        
+    }
+    
+}
