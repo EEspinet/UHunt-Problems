@@ -1,0 +1,78 @@
+//Enrique Espinet
+//UVA Virtual Friends
+//UVA Hunt 11503
+
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+#include <cstring>
+#include <string>
+#include <cctype>
+#include <stack>
+#include <queue>
+#include <list>
+#include <vector>
+#include <map>
+#include <sstream>
+#include <utility>
+#include <set>
+#include <math.h>
+#define pi acos(-1.0)
+
+using namespace std;
+
+int array[100000 + 1]; 
+//Find the parent of the child
+int findParent (int n)
+{
+    if ( array [n] < 0 )
+        return n;
+    return array [n] = findParent(array [n]);
+}
+ 
+int main ()
+{
+    int testCase;
+    cin>>testCase;
+ 
+    while ( testCase--) {
+        int numCase;
+        cin>> numCase;
+ 
+        memset (array, -1, sizeof (array));
+ 
+        int indexing = 1;
+        map <string, int> map;
+ 
+        for ( int i = 0; i < numCase; i++ ) {
+            string first, second;
+            cin >> first >> second;
+ 
+            if ( !map [first] )
+                map [first] = indexing++;
+            if ( !map [second])
+                map [second] = indexing++;
+ 
+            int p = findParent (map [first]);
+            int q = findParent (map [second]);
+ 
+            if ( p == q ) {
+                cout<<(array [p] * -1)<<endl;
+                continue;
+            }
+ 
+            if ( array [p] < array [q] ) {
+                array [p] += array [q];
+                array [q] = p;
+		cout<<(array[p] * -1)<<endl;
+            }
+            else {
+                array [q] += array [p];
+                array [p] = q;
+		cout<<(array[q] * -1)<<endl;
+            }
+        }
+    }
+ 
+    return 0;
+}
