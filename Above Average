@@ -1,0 +1,42 @@
+//Enrique Espinet
+//Above Average
+//10370
+
+int main() {
+	
+	int cases;
+	cin>>cases;
+	
+	for(int a = 0; a < cases; a++)
+	{
+		int numStudent = 0;
+		cin>>numStudent;
+		int array[numStudent];
+		int total = 0;
+		for(int b = 0; b < numStudent; b++)
+		{
+			double temp = 0;
+			cin>>temp;
+			total+=temp;
+			array[b] = temp;
+		}
+		total = (int)((total / numStudent) + 0.5);
+		
+		double numPass = 0.00;
+		
+		for(int c = 0; c < numStudent; c++)
+		{
+			if(array[c] > total)
+			{
+				numPass +=1;
+			}
+		}
+		
+		double average = 0;
+		average = ((numPass / numStudent)*100);
+		cout.precision(3);
+		cout<<fixed<<average<<"%"<<endl;
+		
+	}
+	return 0;
+}
