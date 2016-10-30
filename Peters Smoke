@@ -1,0 +1,31 @@
+//Enrique Espinet
+//Peters Smoke
+//10346
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	int numCig = 0;
+	while(cin>>numCig)
+	{
+		cin>>numCig;
+		int buttNeeded = 0;
+		cin>>buttNeeded;
+		
+		int total = 0;
+		total+=numCig;
+		int temp1 = 0;
+		int temp2 = 0;
+		temp1 = numCig; 
+		while((temp1/buttNeeded)>= 1)
+		{
+			temp1 = temp1 / buttNeeded;
+			temp2 = temp1 % buttNeeded;
+			total += temp1;
+			temp1
+		}
+	}
+	return 0;
+}
