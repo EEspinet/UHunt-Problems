@@ -1,0 +1,19 @@
+//Enrique Espinet
+//Back to high school physics
+//UVA Hunt 10071
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int v,t;
+	while(cin>>v>>t)
+	{
+		int total = 0;
+		total = 2 * ( v * t);
+		cout<<total<<endl;
+		v = 0;
+		t = 0;
+	}
+	return 0;
+}
