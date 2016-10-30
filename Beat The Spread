@@ -1,0 +1,41 @@
+//UVA Beat the Spread
+//10812
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner in = new Scanner(System.in);
+		
+		int cases = in.nextInt();
+		
+		for(int a = 0; a < cases; a++)
+		{
+			int totalSum = in.nextInt();
+			int difference = in.nextInt();
+			
+			if(totalSum < difference)
+			{
+				System.out.println("impossible");
+			}
+			else
+			{
+			int firstNum = ((totalSum - difference)/2);
+			int secondNum = totalSum - firstNum;
+			
+			if((secondNum - firstNum == difference) && (firstNum + secondNum == totalSum))
+			{
+				System.out.println(secondNum + " " + firstNum);
+			}
+			else
+			{
+				System.out.println("impossible");
+			}
+			}
+		}
+	}
+}
