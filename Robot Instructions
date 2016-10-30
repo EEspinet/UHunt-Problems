@@ -1,0 +1,63 @@
+//Robot Instructions
+//UVA Hunt 12503
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int cases;
+	cin>>cases;
+	//Loop for cases
+	for(int a = 0; a < cases; a++)
+	{
+		int numInstruction = 0;
+		cin>>numInstruction;
+		
+		int location = 0;//start robot location at 0
+		
+		int instruction[numInstruction];//create an array thatll store the movement of the robot with each direction
+    
+		string temp;
+		for(int b = 0; b < numInstruction; b++)//Loop for number of instructions
+		{
+			cin>>temp;//obtain the current instruction
+			
+			if(temp.compare("LEFT") == 0)
+			{
+				location = location - 1;//subtract the location of the robot
+				instruction[b] = 1;
+        //if the array contains a "1", then itll mean that the robot made a left turn and the location 
+        //will be subtracted by 1
+			}
+			else if(temp.compare("RIGHT") == 0)
+			{
+				location = location + 1;
+				instruction[b] = 2;
+        //if the array contains a "2" then itll mean that the robot made a right turn and the location
+        //will be incremented by 1
+			}
+			else//use this statement if the instruction refers to a previous step. Hence neither a Left or Right turn
+			{
+				int tempNum = 0;
+				cin>>temp;//use this to skip the "AS"
+				cin>>tempNum;//obtain the integer refering to the instruction number
+				tempNum = tempNum - 1;//subtract 1 to the obtained number so that it can be properly adjusted for the array index
+				if(instruction[tempNum] == 2)//if the index contains a 2, it means that that step originally had a right turn.
+				{
+					location = location + 1;
+					instruction[b] = 2;//store its current location with a "2"
+					
+				}
+				else//same process as before, just with a left turn
+				{
+					location = location - 1;
+					instruction[b] = 1;//store its current location with a "1"
+				}
+			}
+		}
+		
+		cout<<location<<endl;
+    //Print out the answer
+	}
+	return 0;
+}
