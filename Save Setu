@@ -1,0 +1,33 @@
+//Enrique F. Espinet
+//UVA 12403
+//SAVE SETU
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	int numOperations;
+	cin>>numOperations;
+	
+	int total = 0;
+	
+	for(int a = 0; a < numOperations; a++)
+	{
+	string nextWord;
+	int value = 0;
+	
+	cin>>nextWord;
+	
+	if(nextWord=="donate")
+	{
+		cin>>value;
+		total+=value;
+	}
+	else
+	{
+		cout<<total<<endl;
+	}
+	}
+	return 0;
+}
