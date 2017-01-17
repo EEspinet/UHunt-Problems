@@ -1,0 +1,55 @@
+//Enrique Espinet
+//November 28, 2016
+//UVA 12468
+//Zapping
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	int a = 0;
+	int b = 0;
+	
+	cin>>a>>b;
+	
+	while((a != -1)&&(b != -1))
+	{
+		int max1 = 0;
+		int max2 = 0;
+		
+		int maxOf2 = 0;
+		int minOf2 = 0;
+		
+		if((a - b)>=0)
+		{
+			maxOf2 = a;
+			minOf2 = b;
+		}
+		else
+		{
+			maxOf2 = b;
+			minOf2 = a;
+		}
+		
+		max1 = (maxOf2 - minOf2);
+		
+		int temp1 = 0;
+		
+		temp1 = 100 - maxOf2;
+		
+		max2 = (minOf2 + temp1);
+		
+		if(max1 <= max2)
+		{
+			cout<<max1<<endl;
+		}
+		else
+		{
+			cout<<max2<<endl;
+		}
+		
+		cin>>a>>b;
+	}
+	return 0;
+}
