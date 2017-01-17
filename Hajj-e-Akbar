@@ -1,0 +1,29 @@
+//Enrique F. Espinet
+//UVA Hajj-e-Akbar
+//#12577
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	string next;
+	
+	cin>>next;
+	
+	int counter = 1;
+	while(next!="*")
+	{
+		if(next == "Hajj")
+		{
+			cout<<"Case "<<counter<<": Hajj-e-Akbar"<<endl;
+		}
+		else
+		{
+			cout<<"Case "<<counter<<": Hajj-e-Asghar"<<endl;
+	    }
+	    counter++;
+	    cin>>next;
+	}
+	return 0;
+}
