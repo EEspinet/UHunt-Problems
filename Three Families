@@ -1,0 +1,26 @@
+//Enrique Espinet
+//UHunt 12502
+//UVA Three Families
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	int cases;
+	cin>>cases;
+	for(int a = 0; a < cases; a++)
+	{
+		int x = 0;
+		int y = 0;
+		cin>>x>>y;
+		int z = 0;
+		cin>>z;
+		
+		int A = 0;
+		
+		A = z * ((2 * x) - y)/(x + y);
+		cout<<A<<endl;
+	}
+	return 0;
+}
