@@ -1,0 +1,60 @@
+//Enrique F Espinet
+//January 1, 2017
+//UVA Event Planning
+//UHunt 11559
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	int numGuest = 0;
+	while(cin>>numGuest)
+	{
+		int budget = 0;
+		int numHotel = 0;
+		int numWeekend = 0;
+		
+		cin>>budget;
+		cin>>numHotel;
+		cin>>numWeekend;
+		
+		int minCost = budget + 1; //create a max boundary used for later on
+		
+		for(int a = 1; a <= numHotel; a++) //Go through every hotel
+		{
+			int costPerPerson = 0;
+			cin>>costPerPerson;
+			
+			int tempCost = budget + 1;
+			
+			for(int b = 1; b <= numWeekend; b++) //Go through every weeekend
+			{
+				int temp = 0;
+				cin>>temp;
+				
+				if(temp >= numGuest) //check to see if their is enough room for the guests
+				{
+					tempCost = numGuest * costPerPerson;
+				}
+			}
+			
+			if(tempCost < minCost)
+			{
+				minCost = tempCost;
+			}
+		}
+		
+		if(minCost <= budget) //check to see if the final minCost is below or equal to the budget
+		{
+			cout<<minCost<<endl;
+		}
+		else
+		{
+			cout<<"stay home"<<endl;
+		}
+		
+		numGuest = 0;
+	}
+	return 0;
+}
