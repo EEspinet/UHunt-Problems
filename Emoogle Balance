@@ -1,0 +1,39 @@
+//Enrique Espinet
+//UVA Emoogle Balance
+//12279
+
+#include <iostream>; 
+using namespace std;
+
+int main() {
+	
+	int cases = 1;
+	int numTreat = 0;
+	
+	cin>>numTreat;
+	while(numTreat != 0)
+	{
+		int total = 0;
+		
+		for(int a = 0; a < numTreat; a++)
+		{
+			int temp = 0;
+			cin>>temp;
+			
+			if(temp > 0)
+			{
+				total+=1;
+			}
+			else
+			{
+				total -= 1;
+			}
+		}
+		
+		cout<<"Case "<<cases<<": "<<total<<endl;
+		
+		cases++;
+		cin>>numTreat;
+	}
+	return 0;
+}
