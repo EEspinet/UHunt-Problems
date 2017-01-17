@@ -1,0 +1,46 @@
+//Enrque F. Espinet
+//UVA Division of Nlogo
+//UHunt 11498
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int cases;
+	cin>>cases;
+	while(cases!=0)
+	{
+		int xGrid, yGrid = 0;
+		cin>>xGrid>>yGrid;
+		
+		for(int a = 0; a < cases; a++)
+		{
+			int xTest, yTest = 0;
+			cin>>xTest>>yTest;
+			
+			if((yTest == yGrid)||(xTest == xGrid))
+				{
+					cout<<"divisa"<<endl;
+				}
+				else if(((xTest - xGrid)> 0) && ((yTest - yGrid)>0))
+				{
+					cout<<"NE"<<endl;
+				}
+				else if(((xTest - xGrid)> 0) && ((yTest - yGrid)<0))
+				{
+					cout<<"SE"<<endl;
+				}
+				else if(((xTest - xGrid)< 0) && ((yTest - yGrid)>0))
+				{
+					cout<<"NO"<<endl;
+				}
+				else if(((xTest - xGrid)< 0) && ((yTest - yGrid)<0))
+				{
+					cout<<"SO"<<endl;
+				}
+		}
+		cases = 0;
+		cin>>cases;
+	}
+	return 0;
+}
